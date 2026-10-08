@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.git/
+.gitignore
+venv/
+.venv/
+env/
+.env
+*.zip
+.vscode/
+.idea/
+gui.py

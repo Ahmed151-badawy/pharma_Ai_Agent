@@ -1,0 +1,16 @@
+FDA Storage and Interaction Guidelines
+
+Amoxicillin (Amoxil):
+Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Do not freeze liquid suspensions.
+Contraindications: Patients with a history of penicillin allergy.
+Interactions: May reduce the efficacy of oral contraceptives.
+
+Ibuprofen (Advil):
+Storage: Store at controlled room temperature 20°C to 25°C (68°F to 77°F). Avoid excessive heat above 40°C.
+Contraindications: Patients with a history of severe heart failure or active gastrointestinal bleeding.
+Interactions: Increases risk of bleeding when taken with anticoagulants like Warfarin.
+
+Metformin (Glucophage):
+Storage: Store at 20°C to 25°C (68°F to 77°F). Protect from light and excessive moisture. 
+Contraindications: Severe renal impairment (eGFR below 30 mL/min/1.73 m2).
+Interactions: Concurrent use with intravascular radiocontrast imaging agents can lead to acute alterations in renal function.

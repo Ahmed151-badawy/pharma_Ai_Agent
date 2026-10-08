@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+psycopg2-binary
+langchain
+langchain-community
+langchain-huggingface
+langchain-groq
+langgraph
+sentence-transformers
+faiss-cpu
+pypdf
