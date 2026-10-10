@@ -1,0 +1,37 @@
+# Render Blueprint: New + -> Blueprint -> select this repo. Check Render's current plan limits and prices first.
+services:
+  - type: web
+    name: pharma-agent-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter            # the embedding model needs more RAM than a 512 MB free instance usually has
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pharma-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GROQ_API_KEY
+        sync: false          # you paste it in the dashboard
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SEED_DEMO_DATA
+        value: "true"
+
+  - type: web
+    name: pharma-agent-web
+    runtime: docker
+    dockerContext: ./web
+    dockerfilePath: ./web/Dockerfile
+    plan: free
+    envVars:
+      - key: API_URL
+        sync: false          # paste the API service URL, e.g. https://pharma-agent-api.onrender.com
+
+databases:
+  - name: pharma-db
+    plan: free

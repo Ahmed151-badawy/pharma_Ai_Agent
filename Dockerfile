@@ -1,32 +1,37 @@
-# Use an official, lightweight Python image
 FROM python:3.10-slim
 
-# Set the working directory inside the container
 WORKDIR /app
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    HF_HOME=/home/app/.cache/huggingface
 
-# System dependencies for PostgreSQL driver (psycopg2) and native builds
+# System dependencies for the PostgreSQL driver (psycopg2)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install CPU-only PyTorch.
-# The "+cpu" local version tag only exists on the PyTorch CPU index, so pip
-# cannot silently pick the huge CUDA build from PyPI. PyPI stays available
-# (extra-index-url) for torch's regular dependencies (filelock, typing-extensions, ...).
-RUN pip install --no-cache-dir "torch==2.14.1+cpu" \
+# CPU-only PyTorch. The "+cpu" tag exists only on the PyTorch CPU index, so pip cannot pick the huge
+# CUDA build from PyPI. PyPI stays available for torch's regular dependencies.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --default-timeout=120 --retries 10 "torch==2.14.1+cpu" \
     --extra-index-url https://download.pytorch.org/whl/cpu
 
-# Install the remaining Python dependencies
-# (torch is already satisfied, so pip will not replace it)
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.lock requirements.txt requirements-base.txt ./
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --default-timeout=120 --retries 10 -c requirements.lock -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY . .
+# Run as a non-root user
+RUN useradd --create-home --uid 1000 app && chown app:app /app
+COPY --chown=app:app . .
+USER app
 
-# Expose the port FastAPI runs on
+# Build the FAISS index now. This also pre-downloads the embedding model into the image,
+# so the first request is fast and the container needs no internet access for it.
+RUN python -m scripts.build_index
+
 EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 CMD ["python", "scripts/healthcheck.py"]
 
-# Run the FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Entrypoint: alembic migrations -> optional read-only role / demo data -> uvicorn
+CMD ["sh", "scripts/start.sh"]

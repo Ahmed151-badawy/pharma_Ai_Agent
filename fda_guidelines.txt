@@ -1,4 +1,4 @@
-FDA Storage and Interaction Guidelines
+Sample Storage and Interaction Guidelines (demo data, not official FDA text)
 
 Amoxicillin (Amoxil):
 Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Do not freeze liquid suspensions.

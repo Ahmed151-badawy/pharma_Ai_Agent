@@ -1,0 +1,46 @@
+{
+  "family": "pharma-agent-api",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "ghcr.io/OWNER/REPO-api:latest",
+      "essential": true,
+      "portMappings": [{ "containerPort": 8000, "protocol": "tcp" }],
+      "environment": [
+        { "name": "DB_HOST", "value": "YOUR-RDS-ENDPOINT.eu-west-1.rds.amazonaws.com" },
+        { "name": "DB_NAME", "value": "pharma_inventory" },
+        { "name": "DB_USER", "value": "pharma_admin" },
+        { "name": "LOG_JSON", "value": "true" },
+        { "name": "FORWARDED_ALLOW_IPS", "value": "*" },
+        { "name": "SEED_DEMO_DATA", "value": "false" }
+      ],
+      "secrets": [
+        { "name": "GROQ_API_KEY", "valueFrom": "arn:aws:secretsmanager:eu-west-1:ACCOUNT_ID:secret:pharma/groq-api-key" },
+        { "name": "JWT_SECRET", "valueFrom": "arn:aws:secretsmanager:eu-west-1:ACCOUNT_ID:secret:pharma/jwt-secret" },
+        { "name": "DB_PASSWORD", "valueFrom": "arn:aws:secretsmanager:eu-west-1:ACCOUNT_ID:secret:pharma/db-password" },
+        { "name": "ADMIN_PASSWORD", "valueFrom": "arn:aws:secretsmanager:eu-west-1:ACCOUNT_ID:secret:pharma/admin-password" },
+        { "name": "READONLY_DB_PASSWORD", "valueFrom": "arn:aws:secretsmanager:eu-west-1:ACCOUNT_ID:secret:pharma/readonly-db-password" }
+      ],
+      "healthCheck": {
+        "command": ["CMD", "python", "scripts/healthcheck.py"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 90
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/pharma-agent-api",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "api"
+        }
+      }
+    }
+  ]
+}

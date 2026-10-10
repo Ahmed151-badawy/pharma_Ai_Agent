@@ -1,6 +1,10 @@
+import os
+import threading
+import time
+import uuid
+
 import customtkinter as ctk
 import requests
-import threading
 
 # Set dark theme and modern blue accent
 ctk.set_appearance_mode("Dark")
@@ -12,7 +16,14 @@ class PharmaDesktopApp(ctk.CTk):
 
         self.title("Pharma AI Operations & Compliance Dashboard")
         self.geometry("1000x650")
-        self.backend_url = "http://127.0.0.1:8000/api/v1/chat"
+        base_url = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+        self.backend_url = f"{base_url}/api/v1/chat"
+        self.health_url = f"{base_url}/health"
+        self.login_url = f"{base_url}/api/v1/auth/login"
+        self.username = os.getenv("PHARMA_USER", "")
+        self.password = os.getenv("PHARMA_PASSWORD", "")
+        self.token = None
+        self.session_id = uuid.uuid4().hex  # same id = the agent remembers the conversation
 
         # Grid layout (1 row, 2 columns)
         self.grid_rowconfigure(0, weight=1)
@@ -32,9 +43,9 @@ class PharmaDesktopApp(ctk.CTk):
         self.logo_label.pack(padx=20, pady=(20, 10))
 
         self.status_badge = ctk.CTkLabel(
-            self.sidebar_frame, 
-            text="● Service Online (Port 8000)", 
-            text_color="#4CAF50",
+            self.sidebar_frame,
+            text="● Checking service...",
+            text_color="#9E9E9E",
             font=ctk.CTkFont(size=12)
         )
         self.status_badge.pack(padx=20, pady=(0, 20))
@@ -60,6 +71,21 @@ class PharmaDesktopApp(ctk.CTk):
             command=lambda: self.send_preset("Check expiration and contraindications for Ibuprofen batch IBU-9942.")
         )
         btn2.pack(padx=20, pady=5, fill="x")
+
+        btn3 = ctk.CTkButton(
+            self.sidebar_frame,
+            text="What needs attention? (alerts)",
+            command=lambda: self.send_preset("What is expired, expiring soon, or low on stock?")
+        )
+        btn3.pack(padx=20, pady=5, fill="x")
+
+        btn_new = ctk.CTkButton(
+            self.sidebar_frame,
+            text="New conversation",
+            fg_color="#555555",
+            command=self.new_conversation
+        )
+        btn_new.pack(padx=20, pady=(20, 5), fill="x")
 
         # -------------------------------------------------------------
         # Main Area: Chat & Reasoning View
@@ -92,6 +118,26 @@ class PharmaDesktopApp(ctk.CTk):
         self.send_button.grid(row=1, column=1, sticky="e", padx=(5, 10), pady=10)
 
         self.append_chat_message("System", "Welcome to the Pharma AI Operations Assistant. Type a query or use quick audits to interact with the microservice.")
+        threading.Thread(target=self.health_loop, daemon=True).start()
+
+    def health_loop(self):
+        """Poll /health so the status badge reflects the real backend state."""
+        while True:
+            try:
+                online = requests.get(self.health_url, timeout=3).status_code == 200
+            except requests.RequestException:
+                online = False
+            try:
+                self.after(0, self.set_status, online)
+            except RuntimeError:  # window was closed
+                return
+            time.sleep(10)
+
+    def set_status(self, online: bool):
+        if online:
+            self.status_badge.configure(text="● Service Online", text_color="#4CAF50")
+        else:
+            self.status_badge.configure(text="● Service Offline", text_color="#F44336")
 
     def send_preset(self, query_text: str):
         self.input_entry.delete(0, "end")
@@ -111,23 +157,56 @@ class PharmaDesktopApp(ctk.CTk):
         # Run backend request asynchronously in a background thread
         threading.Thread(target=self.query_backend_thread, args=(query,), daemon=True).start()
 
+    def login(self) -> bool:
+        """Log in with PHARMA_USER / PHARMA_PASSWORD and keep the JWT."""
+        response = requests.post(self.login_url, json={"username": self.username, "password": self.password}, timeout=15)
+        if response.status_code != 200:
+            return False
+        self.token = response.json()["access_token"]
+        return True
+
+    def post_chat(self, query: str):
+        headers = {"Authorization": f"Bearer {self.token}"} if self.token else {}
+        return requests.post(self.backend_url, json={"query": query, "session_id": self.session_id},
+                             headers=headers, timeout=90)
+
+    @staticmethod
+    def format_sources(citations: list) -> str:
+        lines = []
+        for c in citations:
+            if c.get("type") == "sql":
+                lines.append(f"  - SQL: {c['query']}")
+            elif c.get("type") == "document":
+                page = f", p.{c['page']}" if c.get("page") else ""
+                lines.append(f"  - Document: {c['source']}{page}")
+            elif c.get("type") == "inventory_alerts":
+                lines.append(f"  - Inventory alerts (next {c['days_ahead']} days)")
+        return "\n\nSources:\n" + "\n".join(lines) if lines else ""
+
     def query_backend_thread(self, query: str):
         try:
-            response = requests.post(
-                self.backend_url, 
-                json={"query": query}, 
-                timeout=45
-            )
+            response = self.post_chat(query)
+            if response.status_code == 401 and self.login():  # no/expired token: log in once and retry
+                response = self.post_chat(query)
             if response.status_code == 200:
                 data = response.json()
-                agent_answer = data.get("response", "No response content received.")
+                self.session_id = data.get("session_id", self.session_id)
+                agent_answer = data.get("response", "No response content received.") + self.format_sources(data.get("citations", []))
                 self.after(0, self.append_chat_message, "Pharma AI Agent", agent_answer)
+            elif response.status_code == 401:
+                self.after(0, self.append_chat_message, "System Error", "Login failed: set PHARMA_USER and PHARMA_PASSWORD.")
+            elif response.status_code == 429:
+                self.after(0, self.append_chat_message, "System Error", "Too many requests: wait a moment and try again.")
             else:
                 self.after(0, self.append_chat_message, "System Error", f"Server responded with code {response.status_code}")
         except Exception as e:
             self.after(0, self.append_chat_message, "System Error", f"Could not reach API service: {str(e)}")
         finally:
             self.after(0, self.reset_send_button)
+
+    def new_conversation(self):
+        self.session_id = uuid.uuid4().hex
+        self.append_chat_message("System", "Started a new conversation (the agent forgot the previous one).")
 
     def reset_send_button(self):
         self.send_button.configure(state="normal", text="Ask Agent")

@@ -1,0 +1,10 @@
+{"question": "How should amoxicillin capsules be stored?", "must_contain": "below 25"}
+{"question": "Can liquid amoxicillin suspension be frozen?", "must_contain": "Do not freeze"}
+{"question": "Who should not take amoxicillin?", "must_contain": "penicillin allergy"}
+{"question": "Does amoxicillin affect birth control pills?", "must_contain": "oral contraceptives"}
+{"question": "What is the maximum heat exposure for ibuprofen?", "must_contain": "40°C"}
+{"question": "Ibuprofen and blood thinners such as warfarin", "must_contain": "Warfarin"}
+{"question": "Ibuprofen contraindications heart failure bleeding", "must_contain": "heart failure"}
+{"question": "Metformin kidney function threshold", "must_contain": "eGFR"}
+{"question": "Metformin and contrast dye for imaging", "must_contain": "radiocontrast"}
+{"question": "Should metformin be protected from light?", "must_contain": "Protect from light"}
