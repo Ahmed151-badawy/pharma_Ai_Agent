@@ -1,0 +1,46 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.0, pytest-9.1.1, pluggy-1.6.0
+rootdir: F:\pharma_agent
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1, langsmith-0.14.7, cov-7.1.0
+collected 90 items
+
+tests\test_agent.py ......                                               [  6%]
+tests\test_api.py ........................                               [ 33%]
+tests\test_database.py ....                                              [ 37%]
+tests\test_inventory_safety.py ....                                      [ 42%]
+tests\test_jwt_config.py .....                                           [ 47%]
+tests\test_rag.py ............                                           [ 61%]
+tests\test_ratelimit.py ..                                               [ 63%]
+tests\test_sql_guard.py .................................                [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.10.0-final-0 _______________
+
+Name                       Stmts   Miss  Cover   Missing
+--------------------------------------------------------
+app\__init__.py                1      0   100%
+app\agent.py                 137     17    88%   60-62, 75, 112, 134-136, 162-163, 201-207
+app\audit.py                   7      0   100%
+app\auth.py                   61      5    92%   28-29, 35, 86, 93
+app\config.py                 58      1    98%   76
+app\db.py                     20      0   100%
+app\inventory.py             104      6    94%   97, 115, 178, 184, 219, 224
+app\logging_conf.py           27      8    70%   11-23, 35
+app\main.py                   75      8    89%   31, 49, 61-63, 103-105
+app\models.py                 69      0   100%
+app\rag.py                   178     14    92%   66-68, 80, 82, 85, 157, 167, 172-173, 184, 236-239
+app\ratelimit.py              36      0   100%
+app\routers\__init__.py        0      0   100%
+app\routers\admin.py          13      0   100%
+app\routers\auth.py           34      1    97%   33
+app\routers\chat.py           42      3    93%   36-38
+app\routers\documents.py      36      0   100%
+app\routers\inventory.py      30      0   100%
+app\schemas.py                65      1    98%   11
+app\sql_guard.py              38      2    95%   39-40
+--------------------------------------------------------
+TOTAL                       1031     66    94%
+Coverage HTML written to dir docs/evidence/coverage_html
+======================== 90 passed in 85.01s (0:01:25) ========================
