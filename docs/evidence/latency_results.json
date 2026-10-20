@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-20 19:05:13",
+    "hardware": {
+      "os": "Windows-10-10.0.19045-SP0",
+      "python_version": "3.10.0",
+      "cpu": "Intel64 Family 6 Model 78 Stepping 3, GenuineIntel",
+      "cpu_count": 4,
+      "machine": "AMD64",
+      "ram_total_gb": 7.89
+    },
+    "llm_model": "openai/gpt-oss-120b",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "groq_tier": "Developer / Free Tier (On-Demand)",
+    "concurrency_notes": "Low concurrency (2-3 concurrent workers) with rate limit monitoring"
+  },
+  "scenarios": {
+    "retrieval_only": {
+      "scenario": "Retrieval only (no LLM, real embeddings)",
+      "endpoint": "GET /api/v1/documents/search",
+      "total_requests": 20,
+      "concurrency": 3,
+      "successful_requests": 20,
+      "rate_limited_429": 0,
+      "status_distribution": {
+        "200": 20
+      },
+      "errors": [],
+      "p50_ms": 151.11,
+      "p95_ms": 242.37,
+      "mean_ms": 162.38,
+      "min_ms": 128.79,
+      "max_ms": 288.83
+    },
+    "sql_tool_e2e": {
+      "scenario": "SQL tool E2E (agent + db query)",
+      "endpoint": "POST /api/v1/chat (stock question)",
+      "total_requests": 10,
+      "concurrency": 2,
+      "successful_requests": 9,
+      "rate_limited_429": 0,
+      "status_distribution": {
+        "200": 9,
+        "500": 1
+      },
+      "errors": [
+        "Status 500: {\"detail\":\"Agent processing error. Check server logs.\"}"
+      ],
+      "p50_ms": 2826.12,
+      "p95_ms": 5080.43,
+      "mean_ms": 3776.26,
+      "min_ms": 1546.89,
+      "max_ms": 11449.3
+    },
+    "doc_search_e2e": {
+      "scenario": "Doc-search E2E (agent + RAG guidelines)",
+      "endpoint": "POST /api/v1/chat (guidelines question)",
+      "total_requests": 10,
+      "concurrency": 2,
+      "successful_requests": 6,
+      "rate_limited_429": 0,
+      "status_distribution": {
+        "200": 6,
+        "500": 4
+      },
+      "errors": [
+        "Status 500: {\"detail\":\"Agent processing error. Check server logs.\"}",
+        "Status 500: {\"detail\":\"Agent processing error. Check server logs.\"}",
+        "Status 500: {\"detail\":\"Agent processing error. Check server logs.\"}",
+        "Status 500: {\"detail\":\"Agent processing error. Check server logs.\"}"
+      ],
+      "p50_ms": 14100.86,
+      "p95_ms": 14819.3,
+      "mean_ms": 15080.68,
+      "min_ms": 4630.46,
+      "max_ms": 29490.54
+    },
+    "ttft_sse_stream": {
+      "scenario": "TTFT (Server-Sent Events streaming)",
+      "endpoint": "POST /api/v1/chat/stream",
+      "total_requests": 10,
+      "concurrency": 2,
+      "successful_requests": 10,
+      "rate_limited_429": 0,
+      "status_distribution": {
+        "200": 10
+      },
+      "errors": [],
+      "p50_ms": 12140.61,
+      "p95_ms": 20545.08,
+      "mean_ms": 14557.4,
+      "min_ms": 7949.78,
+      "max_ms": 29580.55
+    }
+  }
+}
