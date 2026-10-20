@@ -192,7 +192,7 @@ class KnowledgeBase:
             total = len(self._all_docs())
             if total == 0:
                 return []
-            fetch = min(max(k * 3, 10), total)
+            fetch = min(max(k * 10, 60), total)
             vector_hits = [doc for doc, _ in self._store.similarity_search_with_score(query, k=fetch)]
             keyword_hits = self._bm25_search(query, fetch)
 

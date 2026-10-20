@@ -18,9 +18,9 @@ os.environ.setdefault("DATABASE_URL", "postgresql://postgres:postgres@localhost:
 os.environ.setdefault("JWT_SECRET", "test-secret-1234567812345678")
 os.environ.setdefault("EMBEDDINGS_BACKEND", "fake")
 
-from app.agent import TOOLS
-from app.main import app
-from app.models import Base
+from app.agent import TOOLS  # noqa: E402
+from app.main import app  # noqa: E402
+from app.models import Base  # noqa: E402
 
 
 def determine_required_role(path: str, method: str) -> str:

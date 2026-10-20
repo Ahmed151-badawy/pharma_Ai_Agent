@@ -474,10 +474,10 @@
   "bm25": {
     "mode": "bm25",
     "total_questions": 66,
-    "hit_at_1": 0.7121,
+    "hit_at_1": 0.697,
     "hit_at_3": 0.8939,
     "hit_at_5": 0.9848,
-    "mrr": 0.8167,
+    "mrr": 0.8091,
     "details": [
       {
         "question": "How should amoxicillin capsules and dry powder be stored?",
@@ -825,8 +825,8 @@
       {
         "question": "Should reconstituted azithromycin oral suspension be stored in the refrigerator?",
         "must_contain": "do not refrigerate",
-        "rank": 1,
-        "reciprocal_rank": 1.0,
+        "rank": 2,
+        "reciprocal_rank": 0.5,
         "matched_snippet": "Azithromycin (Zithromax): Indications: Mild to moderate infections including acute bacterial exacerbations of chronic ob"
       },
       {

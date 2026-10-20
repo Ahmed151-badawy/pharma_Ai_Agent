@@ -2,7 +2,7 @@ Sample Storage and Interaction Guidelines (FDA / DailyMed Prescribing Informatio
 
 Amoxicillin (Amoxil):
 Indications: Infections of the ear, nose, throat, genitourinary tract, skin, and lower respiratory tract caused by susceptible isolates.
-Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Keep bottle tightly closed. Reconstituted oral suspension may be refrigerated or stored at room temperature; do not freeze liquid suspensions. Discard unused suspension after 14 days.
+Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Keep bottle tightly closed. Reconstituted oral suspension may be kept in a refrigerator or stored at room temperature; do not freeze liquid suspensions. Discard unused suspension after 14 days.
 Contraindications: Patients with a history of penicillin allergy or severe hypersensitivity reactions to beta-lactam antibacterial drugs.
 Warnings: Serious and occasionally fatal anaphylactic reactions have been reported in patients on penicillin therapy. Pseudomembranous colitis and Clostridioides difficile-associated diarrhea.
 Interactions: May reduce the efficacy of oral contraceptives. Probenecid decreases renal tubular secretion of amoxicillin. Allopurinol increases the incidence of skin rashes.
