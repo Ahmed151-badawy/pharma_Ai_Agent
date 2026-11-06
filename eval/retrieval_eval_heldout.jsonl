@@ -1,0 +1,20 @@
+{"question": "Can reconstituted amoxicillin oral suspension be frozen?", "must_contain": "do not freeze", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Who is contraindicated from receiving amoxicillin?", "must_contain": "penicillin allergy", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "How does amoxicillin interact with oral contraceptives?", "must_contain": "oral contraceptives", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "How many days until liquid amoxicillin mixture must be discarded after mixing?", "must_contain": "14 days", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What is the upper temperature threshold to avoid for ibuprofen?", "must_contain": "40\u00b0C", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What is the bleeding risk when ibuprofen is taken with Warfarin?", "must_contain": "Warfarin", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What acute condition does the boxed warning for metformin highlight?", "must_contain": "lactic acidosis", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What precaution is required for metformin before intravascular radiocontrast imaging?", "must_contain": "radiocontrast", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "How should metformin tablets be protected during storage?", "must_contain": "excessive moisture", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What dangerous potassium imbalance can occur when taking lisinopril with spironolactone?", "must_contain": "hyperkalemia", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "How does grapefruit juice interact with atorvastatin metabolism?", "must_contain": "grapefruit juice", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What high cholesterol drug warning mentions unexplained muscle pain and elevated creatine kinase?", "must_contain": "myopathy", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Is Lipitor safe to prescribe during pregnancy or breastfeeding?", "must_contain": "Pregnancy", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "How should levothyroxine be administered relative to breakfast?", "must_contain": "30 to 60 minutes before breakfast", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What peripheral adverse effect is dose-dependently associated with amlodipine?", "must_contain": "peripheral edema", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Can amlodipine cause blood pressure to drop dangerously low in patients with narrow heart valves?", "must_contain": "hypotension", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "What is the maximum storage temperature before albuterol canisters become hazardous?", "must_contain": "49\u00b0C", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Why should asthma patients using Ventolin inhalers avoid blood pressure beta-blockers?", "must_contain": "propranolol", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Why is the combination of losartan and aliskiren contraindicated in diabetic patients?", "must_contain": "aliskiren", "source": "fda_guidelines.txt", "split": "heldout"}
+{"question": "Does taking ibuprofen pain relief with losartan reduce the blood pressure lowering effect?", "must_contain": "antihypertensive", "source": "fda_guidelines.txt", "split": "heldout"}

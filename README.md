@@ -1,6 +1,8 @@
+<p align="center"><img src="web/assets/doesy/doesy-full-256.png" alt="Doesy, the Pharma AI mascot" height="150"></p>
+
 # Pharma AI Agent
 
-A conversational assistant for pharmacy operations. Staff ask questions in plain language; the agent answers from **live inventory data** in PostgreSQL and from **drug documentation** (labels, SOPs, guidelines), and shows exactly where each answer came from.
+A conversational assistant for pharmacy operations, fronted by **Doesy**, the team's friendly robot mascot (see [`docs/BRAND.md`](docs/BRAND.md)). Staff ask questions in plain language; the agent answers from **live inventory data** in PostgreSQL and from **drug documentation** (labels, SOPs, guidelines), and shows exactly where each answer came from.
 
 <!-- Replace OWNER/REPO and the workflow file name with your own. -->
 <!-- [![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml) -->
@@ -182,7 +184,7 @@ python -m eval.run_retrieval_eval --k 1
 app/          FastAPI app: routers/, agent.py, rag.py, sql_guard.py, auth.py, inventory.py, models.py
 alembic/      Database migrations
 scripts/      start.sh, demo data seeding, read-only role setup, index build
-web/          Streamlit UI
+web/          Streamlit UI (web/assets/doesy: mascot assets)
 gui.py        Desktop client
 tests/        pytest suite
 eval/         Retrieval evaluation set

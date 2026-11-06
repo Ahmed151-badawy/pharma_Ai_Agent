@@ -188,11 +188,12 @@ class KnowledgeBase:
 
     def search(self, query: str, k: int | None = None) -> list[Hit]:
         k = k or self._k
+        multiplier = get_settings().retrieval_fetch_multiplier
         with self._lock:
             total = len(self._all_docs())
             if total == 0:
                 return []
-            fetch = min(max(k * 10, 60), total)
+            fetch = min(max(k * multiplier, 10), total)
             vector_hits = [doc for doc, _ in self._store.similarity_search_with_score(query, k=fetch)]
             keyword_hits = self._bm25_search(query, fetch)
 
