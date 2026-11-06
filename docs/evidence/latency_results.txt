@@ -1,0 +1,10 @@
+Benchmark Run: 2026-10-20 19:05:13
+Platform: Windows-10-10.0.19045-SP0 | CPU: Intel64 Family 6 Model 78 Stepping 3, GenuineIntel (4 cores) | RAM: 7.89 GB
+LLM Model: openai/gpt-oss-120b | Embedding Model: all-MiniLM-L6-v2 | Groq Tier: Developer / Free Tier (On-Demand)
+
+| Scenario | Endpoint | Requests | Concurrency | p50 (ms) | p95 (ms) | 429 Errors |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|
+| **Retrieval only (no LLM, real embeddings)** | `GET /api/v1/documents/search` | 20 | 3 | 151.11 | 242.37 | 0 |
+| **SQL tool E2E (agent + db query)** | `POST /api/v1/chat (stock question)` | 10 | 2 | 2826.12 | 5080.43 | 0 |
+| **Doc-search E2E (agent + RAG guidelines)** | `POST /api/v1/chat (guidelines question)` | 10 | 2 | 14100.86 | 14819.3 | 0 |
+| **TTFT (Server-Sent Events streaming)** | `POST /api/v1/chat/stream` | 10 | 2 | 12140.61 | 20545.08 | 0 |

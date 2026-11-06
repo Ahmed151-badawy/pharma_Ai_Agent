@@ -17,3 +17,5 @@ env/
 data/
 faiss_index/
 *.log
+.coverage
+docs/evidence/coverage_html/

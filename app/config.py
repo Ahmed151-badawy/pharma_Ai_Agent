@@ -45,6 +45,7 @@ class Settings(BaseSettings):
     embeddings_backend: str = "huggingface"  # "fake" is used by the test-suite
     embedding_model: str = "all-MiniLM-L6-v2"
     retrieval_k: int = 4
+    retrieval_fetch_multiplier: int = 3
     chunk_size: int = 800
     chunk_overlap: int = 100
     max_upload_mb: int = 10

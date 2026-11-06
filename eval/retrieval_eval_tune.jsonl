@@ -1,0 +1,46 @@
+{"question": "How should amoxicillin capsules and dry powder be stored?", "must_contain": "below 25\u00b0C", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the maximum room temperature for keeping amoxil pills dry?", "must_contain": "25\u00b0C", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why is ibuprofen contraindicated in coronary artery bypass graft surgery?", "must_contain": "CABG", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can ibuprofen be administered to patients with active gastrointestinal bleeding?", "must_contain": "gastrointestinal bleeding", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Is Advil safe for patients who have experienced aspirin-induced asthma attacks?", "must_contain": "aspirin-induced asthma", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "How does ibuprofen affect blood pressure medications like ACE inhibitors?", "must_contain": "ACE inhibitors", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the eGFR cutoff below which metformin is contraindicated?", "must_contain": "eGFR below 30", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can patients with severe kidney failure take glucophage?", "must_contain": "renal impairment", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why should contrast dye for CT scans not be mixed with metformin?", "must_contain": "lactic acidosis", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What enzyme inhibition causes omeprazole to interact negatively with clopidogrel?", "must_contain": "CYP2C19", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What electrolyte abnormality can occur with prolonged omeprazole proton pump inhibitor therapy?", "must_contain": "hypomagnesemia", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What bone complication is associated with long-term omeprazole therapy?", "must_contain": "fractures", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the recommended storage temperature range for omeprazole?", "must_contain": "20\u00b0C to 25\u00b0C", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why should heart patients taking Plavix blood thinner avoid Prilosec?", "must_contain": "clopidogrel", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Does taking stomach acid reflux pills long-term raise the risk of C. diff diarrhea?", "must_contain": "Clostridium difficile", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What boxed warning is associated with lisinopril regarding pregnancy?", "must_contain": "fetal toxicity", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What common respiratory side effect is reported with lisinopril?", "must_contain": "dry nonproductive cough", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why is coadministration of lisinopril with aliskiren contraindicated in diabetic patients?", "must_contain": "aliskiren", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What should a pregnant woman do immediately if she is prescribed an ACE inhibitor for blood pressure?", "must_contain": "discontinue immediately", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can taking potassium salts or water pills together with Prinivil cause unsafe electrolyte spikes?", "must_contain": "hyperkalemia", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What severe muscle breakdown syndrome is warned against with atorvastatin?", "must_contain": "rhabdomyolysis", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why is atorvastatin contraindicated in patients with active liver disease?", "must_contain": "hepatic transaminases", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Which strong CYP3A4 inhibitors significantly increase atorvastatin plasma levels?", "must_contain": "clarithromycin", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the boxed warning regarding the misuse of levothyroxine?", "must_contain": "obesity or weight loss", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why should calcium carbonate and iron supplements be spaced 4 hours apart from levothyroxine?", "must_contain": "absorption", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What endocrine condition is an absolute contraindication for levothyroxine until corrected?", "must_contain": "adrenal insufficiency", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Should thyroid replacement hormone pills be taken with food or on an empty stomach?", "must_contain": "empty stomach", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can Synthroid be prescribed as a quick diet pill for weight reduction?", "must_contain": "weight loss", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the maximum recommended daily dose of simvastatin when taken with amlodipine?", "must_contain": "20 mg", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What cardiovascular condition requires extra caution due to hypotension when starting amlodipine?", "must_contain": "aortic stenosis", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What container specifications are required for storing amlodipine tablets?", "must_contain": "light-resistant", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why do patients taking Norvasc for high blood pressure sometimes get swollen ankles?", "must_contain": "edema", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What cardiac conduction abnormality is associated with azithromycin?", "must_contain": "QT interval", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Should reconstituted azithromycin oral suspension be stored in the refrigerator?", "must_contain": "do not refrigerate", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "How many days after reconstitution must unused azithromycin oral suspension be discarded?", "must_contain": "10 days", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "How do aluminum or magnesium antacids affect azithromycin absorption?", "must_contain": "antacids", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can Z-pack antibiotics cause dangerous irregular heart rhythms like Torsades de Pointes?", "must_contain": "Torsades de Pointes", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Can azithromycin be safely given to someone who had cholestatic jaundice from macrolides before?", "must_contain": "cholestatic jaundice", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "Why are non-selective beta-blockers like propranolol contraindicated with albuterol?", "must_contain": "bronchospasm", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What life-threatening paradoxical reaction can occur following inhalation of albuterol?", "must_contain": "paradoxical bronchospasm", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What electrolyte alteration can be induced by albuterol administration?", "must_contain": "hypokalemia", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What rescue inhaler should never be placed near open flames or heated above 120 degrees Fahrenheit?", "must_contain": "puncture or incinerate", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What is the boxed warning on losartan concerning pregnancy?", "must_contain": "fetal toxicity", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What renal risk occurs when losartan is taken concurrently with NSAIDs?", "must_contain": "renal", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What electrolyte elevation risk is associated with combining losartan and potassium-sparing diuretics?", "must_contain": "hyperkalemia", "source": "fda_guidelines.txt", "split": "tune"}
+{"question": "What happens to fetal development if a mother continues taking Cozaar for hypertension while pregnant?", "must_contain": "renin-angiotensin", "source": "fda_guidelines.txt", "split": "tune"}

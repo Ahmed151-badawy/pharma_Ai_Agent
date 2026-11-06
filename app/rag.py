@@ -188,11 +188,12 @@ class KnowledgeBase:
 
     def search(self, query: str, k: int | None = None) -> list[Hit]:
         k = k or self._k
+        multiplier = get_settings().retrieval_fetch_multiplier
         with self._lock:
             total = len(self._all_docs())
             if total == 0:
                 return []
-            fetch = min(max(k * 3, 10), total)
+            fetch = min(max(k * multiplier, 10), total)
             vector_hits = [doc for doc, _ in self._store.similarity_search_with_score(query, k=fetch)]
             keyword_hits = self._bm25_search(query, fetch)
 
@@ -208,6 +209,56 @@ class KnowledgeBase:
             Hit(cid, by_id[cid].metadata["doc_id"], by_id[cid].metadata["source"], by_id[cid].metadata.get("page"),
                 by_id[cid].page_content, scores[cid])
             for cid in top
+        ]
+
+    def search_vector_only(self, query: str, k: int | None = None) -> list[Hit]:
+        k = k or self._k
+        with self._lock:
+            total = len(self._all_docs())
+            if total == 0 or self._store is None:
+                return []
+            fetch = min(k, total)
+            hits = self._store.similarity_search_with_score(query, k=fetch)
+        return [
+            Hit(
+                doc.metadata["chunk_id"],
+                doc.metadata["doc_id"],
+                doc.metadata["source"],
+                doc.metadata.get("page"),
+                doc.page_content,
+                float(score),
+            )
+            for doc, score in hits
+        ]
+
+    def search_bm25_only(self, query: str, k: int | None = None) -> list[Hit]:
+        k = k or self._k
+        with self._lock:
+            total = len(self._all_docs())
+            if total == 0:
+                return []
+            if self._bm25 is None:
+                self._bm25_docs = self._all_docs()
+                self._bm25 = (
+                    BM25Okapi([_tokenize(d.page_content) or ["_"] for d in self._bm25_docs])
+                    if self._bm25_docs
+                    else None
+                )
+            if self._bm25 is None:
+                return []
+            scores = self._bm25.get_scores(_tokenize(query))
+            ranked = sorted(zip(scores, self._bm25_docs, strict=True), key=lambda pair: -pair[0])
+            hits = [(score, doc) for score, doc in ranked[:k] if score > 0]
+        return [
+            Hit(
+                doc.metadata["chunk_id"],
+                doc.metadata["doc_id"],
+                doc.metadata["source"],
+                doc.metadata.get("page"),
+                doc.page_content,
+                float(score),
+            )
+            for score, doc in hits
         ]
 
 

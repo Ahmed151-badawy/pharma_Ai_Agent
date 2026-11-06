@@ -1,16 +1,78 @@
-Sample Storage and Interaction Guidelines (demo data, not official FDA text)
+Sample Storage and Interaction Guidelines (FDA / DailyMed Prescribing Information Reference)
 
 Amoxicillin (Amoxil):
-Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Do not freeze liquid suspensions.
-Contraindications: Patients with a history of penicillin allergy.
-Interactions: May reduce the efficacy of oral contraceptives.
+Indications: Infections of the ear, nose, throat, genitourinary tract, skin, and lower respiratory tract caused by susceptible isolates.
+Storage: Store capsules and dry powder below 25°C (77°F). Protect from moisture and light. Keep bottle tightly closed. Reconstituted oral suspension may be kept in a refrigerator or stored at room temperature; do not freeze liquid suspensions. Discard unused suspension after 14 days.
+Contraindications: Patients with a history of penicillin allergy or severe hypersensitivity reactions to beta-lactam antibacterial drugs.
+Warnings: Serious and occasionally fatal anaphylactic reactions have been reported in patients on penicillin therapy. Pseudomembranous colitis and Clostridioides difficile-associated diarrhea.
+Interactions: May reduce the efficacy of oral contraceptives. Probenecid decreases renal tubular secretion of amoxicillin. Allopurinol increases the incidence of skin rashes.
 
 Ibuprofen (Advil):
-Storage: Store at controlled room temperature 20°C to 25°C (68°F to 77°F). Avoid excessive heat above 40°C.
-Contraindications: Patients with a history of severe heart failure or active gastrointestinal bleeding.
-Interactions: Increases risk of bleeding when taken with anticoagulants like Warfarin.
+Indications: Relief of mild to moderate pain, reduction of fever, inflammatory diseases such as rheumatoid arthritis and osteoarthritis.
+Storage: Store at controlled room temperature 20°C to 25°C (68°F to 77°F). Avoid excessive heat above 40°C (104°F). Protect from light and excessive moisture.
+Contraindications: Patients with a history of severe heart failure, active gastrointestinal bleeding, or known hypersensitivity to NSAIDs or aspirin-induced asthma. In the setting of coronary artery bypass graft (CABG) surgery.
+Warnings: Cardiovascular thrombotic events, myocardial infarction, stroke, gastrointestinal ulceration, bleeding, perforation, and renal papillary necrosis.
+Interactions: Increases risk of severe bleeding when taken with anticoagulants like Warfarin. Reduces antihypertensive effect of ACE inhibitors and diuretics. Increases lithium and methotrexate plasma concentrations.
 
 Metformin (Glucophage):
-Storage: Store at 20°C to 25°C (68°F to 77°F). Protect from light and excessive moisture. 
-Contraindications: Severe renal impairment (eGFR below 30 mL/min/1.73 m2).
-Interactions: Concurrent use with intravascular radiocontrast imaging agents can lead to acute alterations in renal function.
+Indications: Adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus.
+Storage: Store at 20°C to 25°C (68°F to 77°F); excursions permitted between 15°C and 30°C (59°F to 86°F). Protect from light and excessive moisture.
+Contraindications: Severe renal impairment with eGFR below 30 mL/min/1.73 m2. Known hypersensitivity to metformin hydrochloride. Acute or chronic metabolic acidosis, including diabetic ketoacidosis.
+Warnings: Black box warning for lactic acidosis; risk factors include renal impairment, sepsis, age 65 or older, hepatic impairment, and alcohol consumption.
+Interactions: Concurrent use with intravascular radiocontrast imaging agents can lead to acute alterations in renal function and increases lactic acidosis risk; withhold prior to or at the time of procedure. Carbonic anhydrase inhibitors increase lactic acidosis risk.
+
+Omeprazole (Prilosec):
+Indications: Treatment of active duodenal ulcer, gastroesophageal reflux disease (GERD), erosive esophagitis, pathological hypersecretory conditions (Zollinger-Ellison syndrome), and maintenance of healing of erosive esophagitis.
+Storage: Store at 20°C to 25°C (68°F to 77°F); excursions permitted to 15°C to 30°C (59°F to 86°F). Protect from light and moisture. Keep container tightly closed.
+Contraindications: Known hypersensitivity to substituted benzimidazoles (e.g., esomeprazole, lansoprazole, pantoprazole) or any component of the formulation.
+Warnings: Clostridium difficile-associated diarrhea, bone fractures of the hip, wrist, or spine with long-term therapy, severe hypomagnesemia with prolonged proton pump inhibitor use, and vitamin B12 deficiency.
+Interactions: Avoid concomitant use with clopidogrel because omeprazole significantly reduces clopidogrel active metabolite formation and antiplatelet activity via CYP2C19 inhibition. St. John's Wort and rifampin decrease omeprazole systemic exposure.
+
+Lisinopril (Prinivil / Zestril):
+Indications: Treatment of hypertension, adjunct therapy in heart failure with reduced ejection fraction, and hemodynamically stable patients within 24 hours of acute myocardial infarction.
+Storage: Store at controlled room temperature 20°C to 25°C (68°F to 77°F); excursions permitted between 15°C and 30°C. Protect from excessive heat and moisture. Dispense in a tight container.
+Contraindications: History of angioedema related to previous ACE inhibitor treatment, hereditary or idiopathic angioedema. Coadministration of aliskiren in patients with diabetes mellitus.
+Warnings: Boxed warning for fetal toxicity: drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus; discontinue immediately when pregnancy is detected. Risk of hyperkalemia, persistent dry nonproductive cough, and deterioration of renal function.
+Interactions: Potassium supplements or potassium-sparing diuretics (spironolactone, triamterene) increase the risk of severe hyperkalemia. NSAIDs may attenuate the antihypertensive effect and worsen renal function. Increases serum lithium levels.
+
+Atorvastatin (Lipitor):
+Indications: Primary prevention of cardiovascular events in adult patients without clinically evident coronary heart disease but with multiple risk factors; adjunct to diet for reduction of elevated total cholesterol, LDL-C, apolipoprotein B, and triglycerides in primary hyperlipidemia.
+Storage: Store at controlled room temperature 20°C to 25°C (68°F to 77°F). Dispense in tight containers. Protect from excessive moisture.
+Contraindications: Active liver disease or unexplained persistent elevations of hepatic transaminases. Pregnancy, suspected pregnancy, and breastfeeding mothers. Hypersensitivity to any component.
+Warnings: Myopathy and rhabdomyolysis with acute renal failure secondary to myoglobinuria. Immune-mediated necrotizing myopathy (IMNM). Elevated serum transaminases and liver enzyme abnormalities.
+Interactions: Strong CYP3A4 inhibitors (clarithromycin, itraconazole, ketoconazole, HIV and HCV protease inhibitors) significantly increase atorvastatin plasma concentrations and rhabdomyolysis risk. Large quantities of grapefruit juice exceeding 1.2 liters daily increase exposure. Cyclosporine and gemfibrozil markedly increase myopathy risk.
+
+Levothyroxine (Synthroid / Levoxyl):
+Indications: Replacement or supplemental therapy in congenital or acquired hypothyroidism of any etiology; pituitary TSH suppression in the management of well-differentiated thyroid cancer and nontoxic goiters.
+Storage: Store at 20°C to 25°C (68°F to 77°F); excursions permitted between 15°C and 30°C (59°F to 86°F). Protect from light and moisture. Dispense in tight, light-resistant container.
+Contraindications: Uncorrected subclinical or overt adrenal insufficiency. Untreated thyrotoxicosis. Acute myocardial infarction. Hypersensitivity to inactive ingredients.
+Warnings: Boxed warning: thyroid hormones, including levothyroxine, should not be used alone or in combination with other therapeutic agents for the treatment of obesity or weight loss. Administer as a single daily dose in the morning on an empty stomach at least 30 to 60 minutes before breakfast with a full glass of water.
+Interactions: Calcium carbonate, iron supplements (ferrous sulfate), sucralfate, and proton pump inhibitors impair levothyroxine gastrointestinal absorption; separate administration by at least 4 hours. Warfarin anticoagulation effect is potentiated by levothyroxine.
+
+Amlodipine (Norvasc):
+Indications: Treatment of hypertension to lower blood pressure, chronic stable angina, and confirmed or suspected vasospastic angina (Prinzmetal's or variant angina).
+Storage: Store at controlled room temperature 15°C to 30°C (59°F to 86°F). Dispense in tight, light-resistant containers. Protect from light and moisture.
+Contraindications: Known hypersensitivity to amlodipine or any dihydropyridine calcium channel blocker.
+Warnings: Peripheral edema (dose-dependent ankle swelling), symptomatic hypotension especially in severe aortic stenosis, and worsening angina or acute myocardial infarction upon starting or titrating dosage.
+Interactions: Limits simvastatin daily dose to a maximum of 20 mg when coadministered due to CYP3A4 inhibition increasing simvastatin exposure. Strong CYP3A4 inhibitors (ketoconazole, itraconazole, ritonavir) may increase amlodipine exposure. Cyclosporine and tacrolimus exposure may be increased.
+
+Azithromycin (Zithromax):
+Indications: Mild to moderate infections including acute bacterial exacerbations of chronic obstructive pulmonary disease (COPD), acute bacterial sinusitis, community-acquired pneumonia, pharyngitis/tonsillitis, skin infections, and non-gonococcal urethritis and cervicitis.
+Storage: Store dry powder for oral suspension below 30°C (86°F). Store reconstituted oral suspension between 5°C and 30°C (41°F to 86°F); do not refrigerate reconstituted oral suspension. Use within 10 days of reconstitution and discard unused portion. Tablets store at 15°C to 30°C.
+Contraindications: Known hypersensitivity to azithromycin, erythromycin, or any macrolide or ketolide antibiotic. History of cholestatic jaundice or hepatic dysfunction associated with prior use of azithromycin.
+Warnings: Prolongation of the QT interval and development of arrhythmia and Torsades de Pointes. Serious allergic reactions including angioedema, anaphylaxis, and severe cutaneous adverse reactions (Stevens-Johnson syndrome, toxic epidermal necrolysis, DRESS). Infantile hypertrophic pyloric stenosis.
+Interactions: Avoid coadministration with other drugs known to prolong the QT interval (e.g., amiodarone, procainamide, sotalol, quinidine). Antacids containing aluminum or magnesium reduce the peak serum concentration of azithromycin; do not take simultaneously. Digoxin serum levels may be elevated.
+
+Albuterol (ProAir / Ventolin HFA):
+Indications: Treatment or prevention of bronchospasm in patients 4 years of age and older with reversible obstructive airway disease; prevention of exercise-induced bronchospasm.
+Storage: Store canister between 20°C and 25°C (68°F to 77°F); excursions permitted between 15°C and 30°C (59°F to 86°F). Contents under pressure: do not puncture or incinerate canister. Do not expose to heat or store above 49°C (120°F). Keep away from open flame.
+Contraindications: Hypersensitivity to albuterol sulfate or any propellant or formulation excipients.
+Warnings: Paradoxical bronchospasm can occur with immediate hazard to life; if occurs, discontinue immediately and institute alternative therapy. Cardiovascular effects including tachycardia, palpitations, elevated blood pressure, and arrhythmias. Significant hypokalemia and transient hyperglycemia.
+Interactions: Non-selective beta-adrenergic receptor blockers (e.g., propranolol) antagonize the bronchodilating effect of albuterol and may cause severe bronchospasm in asthmatic patients. Concomitant use with MAO inhibitors or tricyclic antidepressants potentiates vascular and cardiovascular effects. May worsen hypokalemia induced by potassium-wasting diuretics.
+
+Losartan (Cozaar):
+Indications: Treatment of hypertension, reduction of the risk of stroke in patients with hypertension and left ventricular hypertrophy, and treatment of diabetic nephropathy with an elevated serum creatinine and proteinuria in patients with type 2 diabetes and a history of hypertension.
+Storage: Store at controlled room temperature 25°C (77°F); excursions permitted to 15°C to 30°C (59°F to 86°F). Protect from light and moisture. Keep container tightly closed.
+Contraindications: Hypersensitivity to any component of this product. Do not coadminister aliskiren with losartan in patients with diabetes mellitus.
+Warnings: Boxed warning for fetal toxicity: drugs that act on the renin-angiotensin system reduce fetal renal function and increase fetal and neonatal morbidity and death; discontinue as soon as pregnancy is detected. Hyperkalemia risk, hypotension, and oliguria or progressive azotemia in patients with severe heart failure or renal artery stenosis.
+Interactions: Concomitant use with potassium-sparing diuretics (spironolactone, amiloride), potassium supplements, or salt substitutes containing potassium may lead to hyperkalemia. NSAIDs (including COX-2 inhibitors) may diminish the antihypertensive effect and increase renal impairment risk. Dual blockade of the renin-angiotensin system (with ACE inhibitors or aliskiren) increases the risk of hypotension, syncope, hyperkalemia, and renal failure.
